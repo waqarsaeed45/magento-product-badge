@@ -53,8 +53,3 @@ For SKU `24-MB01`, the name and badge are `Example Product [New]` / `New` in Eng
 - Stock status comes from Magento's product salability check.
 - The sample rate is for local demonstration only.
 
-## Query screenshots
-
-- [English](screenshots/graphql-en.png)
-- [French](screenshots/graphql-fr.png)
-- [German](screenshots/graphql-de.png)
