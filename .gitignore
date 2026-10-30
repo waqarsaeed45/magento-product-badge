@@ -1,0 +1,9 @@
+/app/etc/env.php
+/auth.json
+/.composer/
+/vendor/
+/generated/
+/var/
+/pub/static/
+/pub/media/
+.DS_Store
