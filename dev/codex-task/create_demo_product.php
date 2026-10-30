@@ -60,6 +60,22 @@ $product->setStockData([
     'qty' => 10,
     'is_in_stock' => 1,
 ]);
+
+$sourceImagePath = __DIR__ . '/example-product.png';
+$imagePath = BP . '/pub/media/import/example-product.png';
+if (is_file($sourceImagePath) && in_array($product->getImage(), [null, '', 'no_selection'], true)) {
+    if (!is_dir(dirname($imagePath))) {
+        mkdir(dirname($imagePath), 0775, true);
+    }
+    copy($sourceImagePath, $imagePath);
+    $product->addImageToMediaGallery(
+        $imagePath,
+        ['image', 'small_image', 'thumbnail'],
+        false,
+        false
+    );
+}
+
 $productRepository->save($product);
 
 $sourceItem = $objectManager->get(SourceItemInterfaceFactory::class)->create();
