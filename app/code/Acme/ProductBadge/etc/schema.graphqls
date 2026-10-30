@@ -1,0 +1,13 @@
+type AcmeProductDetails {
+    sku: String!
+    name: String!
+    price: Float!
+    currency: String!
+    stock_status: String!
+    badge: String
+}
+
+type Query {
+    productDetails(sku: String!): AcmeProductDetails
+        @resolver(class: "Acme\\ProductBadge\\Model\\Resolver\\ProductDetails")
+}
